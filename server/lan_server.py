@@ -168,7 +168,12 @@ class Match:
 # Match management functions
 def start_match_timer(match_id, duration):
     def timer_callback():
-        time.sleep(duration)
+        for remaining_time in range(duration, 0, -1):
+            time.sleep(1)
+            socketio.emit('timer_update', {
+                'match_id': match_id,
+                'timeRemaining': remaining_time
+            }, room=match_id)
         if match_id in game_state.active_matches:
             match = game_state.active_matches[match_id]
             end_match(match)
@@ -199,7 +204,7 @@ def end_match(match):
 
 def get_random_question(algorithm_type: str):
     query = {}
-    if algorithm_type != 'random':
+    if (algorithm_type != 'random'):
         query['type'] = algorithm_type
     
     question = questions_collection.aggregate([

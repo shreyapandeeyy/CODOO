@@ -39,6 +39,21 @@ const Battle = () => {
     }
   }, [timeRemaining, status]);
 
+  useEffect(() => {
+    const socket = useGameStore.getState().socket;
+    if (!socket) return;
+
+    const handleTimerUpdate = (data) => {
+      updateTimer(data.timeRemaining);
+    };
+
+    socket.on("timer_update", handleTimerUpdate);
+
+    return () => {
+      socket.off("timer_update", handleTimerUpdate);
+    };
+  }, [updateTimer]);
+
   if (!question || !opponent) {
     return (
       <div className="flex items-center justify-center h-screen">
