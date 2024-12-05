@@ -52,7 +52,7 @@ const useGameStore = create<GameState>((set, get) => ({
   matchId: null,
   opponentProgress: { tests_passed: 0, total_tests: 0 },
   myProgress: { tests_passed: 0, total_tests: 0 },
-  timeRemaining: 10,
+  timeRemaining: 60,
   initializeSocket: () => {
     if (get().socket?.connected) return;
 
@@ -76,7 +76,7 @@ const useGameStore = create<GameState>((set, get) => ({
         matchId: data.match_id,
         myProgress: { tests_passed: 0, total_tests: data.total_tests },
         opponentProgress: { tests_passed: 0, total_tests: data.total_tests },
-        timeRemaining: 10,
+        timeRemaining: 60,
       });
     });
 
@@ -93,6 +93,10 @@ const useGameStore = create<GameState>((set, get) => ({
       set((state) => ({
         status: "ended",
       }));
+    });
+
+    socket.on("timer_update", (data) => {
+      set({ timeRemaining: data.timeRemaining });
     });
 
     socket.on("connect_error", (error) => {
@@ -125,7 +129,7 @@ const useGameStore = create<GameState>((set, get) => ({
       matchId: null,
       opponentProgress: { tests_passed: 0, total_tests: 0 },
       myProgress: { tests_passed: 0, total_tests: 0 },
-      timeRemaining: 10,
+      timeRemaining: 60,
     }),
 }));
 
