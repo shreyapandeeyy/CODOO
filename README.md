@@ -1,12 +1,6 @@
-# LitCode 🔥
+# Codoo 🔥
 
-LitCode is a competitive 1v1 coding platform where developers can challenge each other to solve algorithmic problems in real-time. Think of it as a multiplayer version of LeetCode where you can directly compete against other programmers!
-
-## 📺 Quick Demo
-
-[![LitCode Demo](https://img.youtube.com/vi/Hg4UC5cIdhc/0.jpg)](https://www.youtube.com/watch?v=Hg4UC5cIdhc)
-
-*Watch how LitCode brings competitive programming to life! See real-time battles between coders competing to solve algorithmic challenges.*
+Codoo is a competitive 1v1 coding platform where developers can challenge each other to solve algorithmic problems in real-time. Think of it as a multiplayer version of LeetCode where you can directly compete against other programmers!
 
 ## 🎮 How It Works
 
@@ -121,7 +115,7 @@ SIGNING_SECRET=your_signing_secret
 
 ### Purpose
 
-LitCode aims to provide a fun and competitive environment for developers to improve their coding skills. By competing against others, developers can learn new techniques, improve their problem-solving abilities, and gain confidence in their coding skills.
+Codoo aims to provide a fun and competitive environment for developers to improve their coding skills. By competing against others, developers can learn new techniques, improve their problem-solving abilities, and gain confidence in their coding skills.
 
 ### Features
 
@@ -141,4 +135,4 @@ LitCode aims to provide a fun and competitive environment for developers to impr
 - **Achievements:** Introduce achievements and badges to reward users for their accomplishments.
 - **Social Features:** Enable users to connect with friends and challenge them to matches.
 
-We hope you enjoy using LitCode and find it helpful in improving your coding skills. Happy coding!
+We hope you enjoy using Codoo and find it helpful in improving your coding skills. Happy coding!
